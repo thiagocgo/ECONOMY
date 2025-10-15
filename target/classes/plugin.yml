@@ -1,0 +1,11 @@
+name: ArcaneFactions
+version: 1.0
+main: com.thiagocgo.arcanefactions.ArcaneFactions
+api-version: 1.21
+commands:
+  arcane:
+    description: ArcaneFactions admin commands
+    usage: /<command> [setnpc|createnpc|reload|faction|quest|debug]
+  faction:
+    description: Faction commands
+    usage: /<command> [gui]

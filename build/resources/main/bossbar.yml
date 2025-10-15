@@ -1,0 +1,5 @@
+# Configuração da BossBar do ArcaneMoney
+enabled: true
+message: "&6&lARCANE&5&lMC &e• &6&l%amount% Arcanas"
+color: BLUE
+style: SOLID

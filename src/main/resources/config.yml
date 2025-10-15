@@ -1,0 +1,13 @@
+# Configuração do plugin ArcaneMoney
+currency:
+  name: "Arcane Coins"
+  symbol: "AC"
+
+starting-balance: 100
+
+trade:
+  vip-discount: 0.1 # 10% de desconto na compra para VIPs/Investors
+  vip-bonus: 0.1 # 10% de bônus na venda para VIPs/Investors
+
+shops:
+  stock-limit: 640 # Limite de estoque por item na loja (em itens). Use -1 para ilimitado.

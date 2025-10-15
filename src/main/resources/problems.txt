@@ -1,0 +1,4 @@
+// PROBLEMAS //
+
+2. mesmo com permissão não tenho notado o investimento cair ( a pasta do plugin acabou de ser criada...)
+

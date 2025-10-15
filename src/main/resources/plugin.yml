@@ -1,0 +1,43 @@
+name: ArcaneMoney
+version: 1.0
+main: com.thiagocgo.arcanemoney.ArcaneMoney
+api-version: 1.13
+commands:
+  arcanemoney:
+    description: Admin command for ArcaneMoney
+    usage: /<command> [vip|adicionar|remover|saldo|transferir|reload]
+    permission: arcanemoney.admin
+  saldo:
+    description: Check your balance
+    usage: /<command>
+    permission: arcanemoney.use
+  transferir:
+    description: Transfer money to another player
+    usage: /<command> <player> <amount>
+    permission: arcanemoney.use
+  sell:
+    description: Sell items to the server
+    usage: /<command> <modid> <item> <quantity>
+    permission: arcanemoney.use
+  trade:
+    description: Manage trade items
+    usage: /<command> [add|remove|list]
+    permission: arcanemoney.use
+  criarloja:
+    description: Create a shop
+    usage: /<command>
+    permission: arcanemoney.vip
+  listlojas:
+    description: List your shops
+    usage: /<command>
+    permission: arcanemoney.use
+permissions:
+  arcanemoney.use:
+    description: Allows use of basic ArcaneMoney commands
+    default: true
+  arcanemoney.vip:
+    description: Allows creating shops
+    default: false
+  arcanemoney.admin:
+    description: Allows admin commands
+    default: op

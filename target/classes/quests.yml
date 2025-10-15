@@ -1,0 +1,318 @@
+quests:
+  # Ordem da Chama Velada - Cadeia de Missões
+  chama_missao_1:
+    name: "Ritual Bárbaro"
+    faction: "ordem_da_chama_velada"
+    type: "collect"
+    objective:
+      item: "BONE"
+      amount: 10
+    rewards:
+      - "reputation:50"
+      - "item:IRON_INGOT:5"
+    dialogue:
+      start: "Coletar 10 ossos para o ritual da Chama!"
+      complete: "A Chama aprova sua força!"
+    nextQuest: "chama_missao_2"
+    isDaily: false
+  chama_missao_2:
+    name: "Prova de Força"
+    faction: "ordem_da_chama_velada"
+    type: "kill"
+    objective:
+      entity: "SKELETON"
+      amount: 5
+    rewards:
+      - "reputation:75"
+      - "item:IRON_SWORD:1"
+    dialogue:
+      start: "Mate 5 esqueletos para provar sua força!"
+      complete: "Você é um verdadeiro guerreiro!"
+    nextQuest: "chama_missao_3"
+    isDaily: false
+  chama_missao_3:
+    name: "Relíquia da Chama"
+    faction: "ordem_da_chama_velada"
+    type: "explore"
+    objective:
+      location: "world,100,65,100"
+      amount: 1
+    rewards:
+      - "reputation:100"
+      - "item:BLAZE_ROD:1"
+    dialogue:
+      start: "Encontre a caverna da relíquia em (100, 65, 100)!"
+      complete: "A relíquia fortalece a Chama!"
+    nextQuest: "chama_missao_4"
+    isDaily: false
+  chama_missao_4:
+    name: "Derrotar Rival"
+    faction: "ordem_da_chama_velada"
+    type: "kill"
+    objective:
+      entity: "PLAYER"
+      amount: 1
+    rewards:
+      - "reputation:150"
+      - "item:DIAMOND:1"
+    dialogue:
+      start: "Derrote um jogador dos Ecos da Ruína!"
+      complete: "A Chama celebra sua vitória!"
+    nextQuest: "chama_missao_5"
+    isDaily: false
+  chama_missao_5:
+    name: "Defesa do Acampamento"
+    faction: "ordem_da_chama_velada"
+    type: "kill"
+    objective:
+      entity: "ZOMBIE"
+      amount: 10
+    rewards:
+      - "reputation:200"
+      - "item:DIAMOND_AXE:1"
+    dialogue:
+      start: "Defenda o acampamento de 10 zumbis!"
+      complete: "O acampamento está seguro, graças a você!"
+    isDaily: false
+
+  # Ecos da Ruína - Cadeia de Missões
+  ecos_missao_1:
+    name: "Saque Arcano"
+    faction: "ecos_da_ruina"
+    type: "collect"
+    objective:
+      item: "AMETHYST_SHARD"
+      amount: 15
+    rewards:
+      - "reputation:50"
+      - "item:ENCHANTED_BOOK:1"
+    dialogue:
+      start: "Coletar 15 fragmentos de ametista para nosso ritual!"
+      complete: "Os fragmentos fortalecerão nossa magia!"
+    nextQuest: "ecos_missao_2"
+    isDaily: false
+  ecos_missao_2:
+    name: "Emboscada"
+    faction: "ecos_da_ruina"
+    type: "kill"
+    objective:
+      entity: "PLAYER"
+      amount: 3
+    rewards:
+      - "reputation:75"
+      - "item:GOLD_INGOT:5"
+    dialogue:
+      start: "Derrote 3 jogadores da Corte da Alvorada!"
+      complete: "Sua vilania é impressionante!"
+    nextQuest: "ecos_missao_3"
+    isDaily: false
+  ecos_missao_3:
+    name: "Segredo Místico"
+    faction: "ecos_da_ruina"
+    type: "dialogue"
+    objective:
+      dialogues:
+        - "Fale com o NPC Arcanista."
+        - "Fale com o NPC Guardião Sombrio."
+    rewards:
+      - "reputation:100"
+      - "item:BOOK:1"
+    dialogue:
+      start: "Converse com 2 NPCs para desvendar o segredo!"
+      complete: "O segredo foi revelado!"
+    nextQuest: "ecos_missao_4"
+    isDaily: false
+  ecos_missao_4:
+    name: "Exploração Arcana"
+    faction: "ecos_da_ruina"
+    type: "explore"
+    objective:
+      location: "world,200,65,200"
+      amount: 1
+    rewards:
+      - "reputation:150"
+      - "item:ENCHANTED_GOLDEN_APPLE:1"
+    dialogue:
+      start: "Encontre o altar arcano em (200, 65, 200)!"
+      complete: "Você encontrou o altar!"
+    nextQuest: "ecos_missao_5"
+    isDaily: false
+  ecos_missao_5:
+    name: "Ritual Sombrio"
+    faction: "ecos_da_ruina"
+    type: "collect"
+    objective:
+      item: "ENDER_PEARL"
+      amount: 5
+    rewards:
+      - "reputation:200"
+      - "item:DIAMOND:3"
+    dialogue:
+      start: "Coletar 5 pérolas do ender para o ritual!"
+      complete: "O ritual está completo!"
+    isDaily: false
+
+  # Corte da Alvorada - Cadeia de Missões
+  alvorada_missao_1:
+    name: "Oferta de Paz"
+    faction: "corte_da_alvorada"
+    type: "collect"
+    objective:
+      item: "WHEAT"
+      amount: 20
+    rewards:
+      - "reputation:50"
+      - "item:BREAD:10"
+    dialogue:
+      start: "Coletar 20 trigo para alimentar os necessitados!"
+      complete: "Sua bondade fortalece a Alvorada!"
+    nextQuest: "alvorada_missao_2"
+    isDaily: false
+  alvorada_missao_2:
+    name: "Proteger os Fracos"
+    faction: "corte_da_alvorada"
+    type: "kill"
+    objective:
+      entity: "ZOMBIE"
+      amount: 5
+    rewards:
+      - "reputation:75"
+      - "item:IRON_CHESTPLATE:1"
+    dialogue:
+      start: "Derrote 5 zumbis para proteger os fracos!"
+      complete: "Você trouxe segurança aos inocentes!"
+    nextQuest: "alvorada_missao_3"
+    isDaily: false
+  alvorada_missao_3:
+    name: "Peregrinação"
+    faction: "corte_da_alvorada"
+    type: "explore"
+    objective:
+      location: "world,300,65,300"
+      amount: 1
+    rewards:
+      - "reputation:100"
+      - "item:GOLDEN_APPLE:1"
+    dialogue:
+      start: "Visite o altar sagrado em (300, 65, 300)!"
+      complete: "Sua fé foi renovada!"
+    nextQuest: "alvorada_missao_4"
+    isDaily: false
+  alvorada_missao_4:
+    name: "Diplomacia"
+    faction: "corte_da_alvorada"
+    type: "dialogue"
+    objective:
+      dialogues:
+        - "Fale com o Embaixador."
+        - "Fale com o Sacerdote."
+    rewards:
+      - "reputation:150"
+      - "item:BOOK:1"
+    dialogue:
+      start: "Converse com 2 NPCs para fortalecer a diplomacia!"
+      complete: "A paz foi reforçada!"
+    nextQuest: "alvorada_missao_5"
+    isDaily: false
+  alvorada_missao_5:
+    name: "Cruzada da Luz"
+    faction: "corte_da_alvorada"
+    type: "kill"
+    objective:
+      entity: "SKELETON"
+      amount: 10
+    rewards:
+      - "reputation:200"
+      - "item:DIAMOND_CHESTPLATE:1"
+    dialogue:
+      start: "Derrote 10 esqueletos para iniciar a cruzada!"
+      complete: "A luz da Alvorada prevalece!"
+    isDaily: false
+
+  # Missões Diárias
+  daily_collect:
+    name: "Coletar Recursos"
+    faction: "all"
+    type: "collect"
+    objective:
+      item: "COBBLESTONE"
+      amount: 32
+    rewards:
+      - "reputation:25"
+      - "item:COAL:5"
+    dialogue:
+      start: "Coletar 32 pedregulhos para sua facção!"
+      complete: "Bom trabalho com os recursos!"
+    isDaily: true
+  daily_kill:
+    name: "Caça aos Monstros"
+    faction: "all"
+    type: "kill"
+    objective:
+      entity: "SPIDER"
+      amount: 3
+    rewards:
+      - "reputation:25"
+      - "item:STRING:5"
+    dialogue:
+      start: "Mate 3 aranhas para sua facção!"
+      complete: "As aranhas foram eliminadas!"
+    isDaily: true
+  initial_quest_1:
+    name: "Primeiro Passo: Ecos"
+    faction: "all"
+    type: "collect"
+    objective:
+      item: "STONE"
+      amount: 10
+    rewards:
+      - "reputation:ecos_da_ruina:15"
+      - "item:COBBLESTONE:5"
+    dialogue:
+      start: "Coletar 10 pedras para os Ecos da Ruína!"
+      complete: "Os Ecos agradecem sua ajuda!"
+    isDaily: false
+    initial_quest_2:
+      name: "Primeiro Passo: Alvorada"
+      faction: "all"
+      type: "collect"
+      objective:
+        item: "WHEAT"
+        amount: 10
+      rewards:
+        - "reputation:corte_da_alvorada:15"
+        - "item:BREAD:3"
+      dialogue:
+        start: "Coletar 10 trigos para a Corte da Alvorada!"
+        complete: "A Alvorada valoriza seu esforço!"
+      isDaily: false
+    initial_quest_3:
+      name: "Primeiro Passo: Chama"
+      faction: "all"
+      type: "collect"
+      objective:
+        item: "COAL"
+        amount: 10
+      rewards:
+        - "reputation:ordem_da_chama_velada:15"
+        - "item:TORCH:4"
+      dialogue:
+        start: "Coletar 10 carvões para a Ordem da Chama Velada!"
+        complete: "A Chama brilha com sua oferta!"
+      isDaily: false
+    initial_quest_4:
+      name: "Desafio Comum"
+      faction: "all"
+      type: "kill"
+      objective:
+        entity: "ZOMBIE"
+        amount: 5
+      rewards:
+        - "reputation:ecos_da_ruina:15"
+        - "reputation:corte_da_alvorada:15"
+        - "reputation:ordem_da_chama_velada:15"
+        - "item:IRON_INGOT:2"
+      dialogue:
+        start: "Matar 5 zumbis para provar seu valor!"
+        complete: "Todas as facções reconhecem sua força!"
+      isDaily: false

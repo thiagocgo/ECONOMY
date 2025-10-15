@@ -1,0 +1,6 @@
+npcs:
+# Exemplo: ecos_npc_1:
+#   name: "Feiticeiro Varkis"
+#   faction: "ecos_da_ruina"
+#   location: "world,100,65,100"
+#   dialogue: "Prove sua vilania! Deseja uma missão?"

@@ -1,0 +1,6 @@
+com\thiagocgo\arcanefactions\quests\events\QuestStartEvent.class
+com\thiagocgo\arcanefactions\npcs\manager\NPCManager.class
+com\thiagocgo\arcanefactions\factions\model\ReputationLevel.class
+com\thiagocgo\arcanefactions\commands\SetNPCCommand.class
+com\thiagocgo\arcanefactions\quests\model\Quest.class
+com\thiagocgo\arcanefactions\npcs\model\FactionNPC.class

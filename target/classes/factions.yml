@@ -1,0 +1,25 @@
+factions:
+  ecos_da_ruina:
+    name: "Ecos da Ruína"
+    colors:
+      primary: "&d"
+      secondary: "&a"
+    lore: "Feiticeiros humanos que roubam e manipulam magias sombrias."
+    enemies: ["corte_da_alvorada"]
+    territory: "ecos_ruina_region"
+  corte_da_alvorada:
+    name: "Corte da Alvorada"
+    colors:
+      primary: "&9"
+      secondary: "&f"
+    lore: "Seguidores da paz, guiados por fé, mas com planos de cruzadas."
+    enemies: []
+    territory: "alvorada_region"
+  ordem_da_chama_velada:
+    name: "Ordem da Chama Velada"
+    colors:
+      primary: "&c"
+      secondary: "&6"
+    lore: "Bárbaros sedentos por sangue que veneram uma chama profana."
+    enemies: ["ecos_da_ruina", "corte_da_alvorada"]
+    territory: "chama_velada_region"
