@@ -1,6 +1,6 @@
 
 
-
+VER DE TROCAR O COMANDO SO PARA /MONEY
 
 
 
@@ -15,13 +15,6 @@ VIP -> LIMITE DE 3 LOJAS, PRIMEIRA LOJA 500, SEGUNDA 1500 TERCEIRA 4500
 Configurability: Consider adding configuration options for particle type, frequency, or shulker box behavior in shops.yml.
 
 
-
-3. n faz mais sentido ao inves de tentarmos referenciar por um json-config:
-  directory: C:\Users\thiag\OneDrive\Desktop\Archlightserver\config\arcaneclasses
-  staff-file: staff.json
-  vips-file: vips.json
-
-q ta meio hardcoded e usarmos as permissões?? pq ai ao inves deu saber quem é a staff por um arquivo, conseguimos fazer com q a staff tenha a permissão de admin e o vip de vip por outro plugin de permissões... antes de mandar o codigo pra mim alterado veja se n faz mais sentido logico...
 
 2. criar mensagem de que alguem tentou comprar na sua loja mas o estoque acabou.
 // LOGICA //

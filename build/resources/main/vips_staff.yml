@@ -1,10 +1,4 @@
 # Configuração de VIPs e Staff do ArcaneMoney
-json-config:
-  directory: "C:\\Users\\thiag\\OneDrive\\Desktop\\Archlightserver\\config\\arcaneclasses"
-  staff-file: "staff.json"
-  vips-file: "vips.json"
 investment:
-  yield-rate: 0.05 # Percentual de rendimento diário (0,5%)
-  yield-limit: 1000.0 # Limite máximo de rendimento por dia
-vips: []
-staff: []
+  yield-rate: 0.005
+  yield-limit: 1000.0

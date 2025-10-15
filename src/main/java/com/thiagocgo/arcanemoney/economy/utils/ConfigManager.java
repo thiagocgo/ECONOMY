@@ -3,12 +3,8 @@ package com.thiagocgo.arcanemoney.economy.utils;
 import com.thiagocgo.arcanemoney.ArcaneMoney;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +17,7 @@ public class ConfigManager {
     private FileConfiguration config;
     private FileConfiguration messages;
     private FileConfiguration economy;
-    private FileConfiguration vipsStaff;
+    private FileConfiguration vipsStaff; // Mantido mas SEMPRE VAZIO (só investment config)
     private FileConfiguration bossBar;
     private FileConfiguration trades;
     private FileConfiguration shops;
@@ -65,8 +61,8 @@ public class ConfigManager {
             plugin.saveResource("vips_staff.yml", false);
         }
         vipsStaff = YamlConfiguration.loadConfiguration(vipsStaffFile);
-        loadVipsStaffFromJson();
-        plugin.getLogger().info("Loaded vips_staff.yml");
+        // ✅ JSON REMOVIDO! VIP/Staff agora via PERMISSÕES
+        plugin.getLogger().info("Loaded vips_staff.yml (permissions system active)");
     }
 
     public void setupBossBar() {
@@ -100,70 +96,7 @@ public class ConfigManager {
         plugin.getLogger().info("Loaded shops.yml");
     }
 
-    private void loadVipsStaffFromJson() {
-        String jsonDirPath = vipsStaff.getString("json-config.directory", "C:\\Users\\thiag\\OneDrive\\Desktop\\Archlightserver\\config\\arcaneclasses");
-        String staffFileName = vipsStaff.getString("json-config.staff-file", "staff.json");
-        String vipsFileName = vipsStaff.getString("json-config.vips-file", "vips.json");
-        File jsonDir = new File(jsonDirPath);
-        JSONParser parser = new JSONParser();
-
-        try {
-            File staffFile = new File(jsonDir, staffFileName);
-            if (staffFile.exists()) {
-                FileReader reader = new FileReader(staffFile);
-                JSONArray staffArray = (JSONArray) parser.parse(reader);
-                for (Object obj : staffArray) {
-                    JSONObject json = (JSONObject) obj;
-                    String uuid = (String) json.get("uuid");
-                    if (uuid != null && !uuid.trim().isEmpty()) {
-                        addVipOrStaff("staff", uuid);
-                    }
-                }
-                reader.close();
-                plugin.getLogger().info("Loaded staff.json");
-            } else {
-                plugin.getLogger().warning("staff.json not found at: " + staffFile.getAbsolutePath());
-            }
-        } catch (Exception e) {
-            plugin.getLogger().warning("Failed to load staff.json: " + e.getMessage());
-        }
-
-        try {
-            File vipsFile = new File(jsonDir, vipsFileName);
-            if (vipsFile.exists()) {
-                FileReader reader = new FileReader(vipsFile);
-                JSONArray vipsArray = (JSONArray) parser.parse(reader);
-                for (Object obj : vipsArray) {
-                    JSONObject json = (JSONObject) obj;
-                    String uuid = (String) json.get("uuid");
-                    if (uuid != null && !uuid.trim().isEmpty()) {
-                        addVipOrStaff("vips", uuid);
-                    }
-                }
-                reader.close();
-                plugin.getLogger().info("Loaded vips.json");
-            } else {
-                plugin.getLogger().warning("vips.json not found at: " + vipsFile.getAbsolutePath());
-            }
-        } catch (Exception e) {
-            plugin.getLogger().warning("Failed to load vips.json: " + e.getMessage());
-        }
-    }
-
-    private void addVipOrStaff(String type, String uuid) {
-        List<Map<?, ?>> list = vipsStaff.getMapList(type);
-        for (Map<?, ?> entry : list) {
-            if (entry.get("uuid").equals(uuid)) {
-                return;
-            }
-        }
-        Map<String, Object> newEntry = new HashMap<>();
-        newEntry.put("uuid", uuid);
-        newEntry.put("last_yield", 0L);
-        list.add(newEntry);
-        vipsStaff.set(type, list);
-        saveVipsStaff();
-    }
+    // ✅ MÉTODOS JSON REMOVIDOS TOTALMENTE!
 
     public FileConfiguration getConfig() {
         return config;
@@ -286,7 +219,7 @@ public class ConfigManager {
             plugin.saveResource("trades.yml", true);
             trades = YamlConfiguration.loadConfiguration(tradesFile);
         }
-        loadVipsStaffFromJson();
+        // ✅ JSON REMOVIDO DO RELOAD!
         plugin.getLogger().info("Reloaded all configuration files");
     }
 
@@ -311,6 +244,7 @@ public class ConfigManager {
         return message.replace("&", "§");
     }
 
+    // ✅ MÉTODO getSafeMapList MANTIDO (só investment config usa)
     public List<Map<String, Object>> getSafeMapList(FileConfiguration config, String path) {
         List<?> rawList = config.getList(path, new ArrayList<>());
         List<Map<String, Object>> result = new ArrayList<>();
@@ -330,6 +264,6 @@ public class ConfigManager {
     }
 
     public int getShopStockLimit() {
-        return config.getInt("shops.stock-limit", 640); // Default to 640 if not set
+        return config.getInt("shops.stock-limit", 640);
     }
 }

@@ -163,7 +163,7 @@ public class ShopManager {
                         double buyPrice = itemSection.getDouble("buy_price");
                         int stock = itemSection.getInt("stock");
                         int quantity = itemSection.getInt("quantity", 1);
-                        int maxStock = itemSection.getInt("max_stock", type.equals("admin") ? -1 : 64 * 7);
+                        int maxStock = itemSection.getInt("max_stock", type.equals("admin") ? -1 : configManager.getShopStockLimit());
                         shop.getItems().put(itemTag, new Shop.ShopItem(itemTag, buyPrice, stock, quantity, maxStock));
                     }
                 }

@@ -1,5 +1,4 @@
 // PROBLEMAS //
 
-2. mesmo com permissão não tenho notado o investimento cair ( a pasta do plugin acabou de ser criada...)
 
-3. podemos mexer nesse limite de estoque? acho que 480 ainda está pouco la, podemos colocar uins 10 packs e isso ser configuravel na config tmb?
+a shulker fecha mesmo com a gui aberta

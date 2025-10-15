@@ -1,4 +1,5 @@
 // PROBLEMAS //
 
-2. mesmo com permissão não tenho notado o investimento cair ( a pasta do plugin acabou de ser criada...)
 
+a shulker fecha mesmo com a gui aberta
+fazer particulas sairem sempre
