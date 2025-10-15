@@ -47,7 +47,7 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
         switch (args[0].toLowerCase()) {
             case "vip":
                 if (args.length != 2) {
-                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/arcanemoney vip <player>"));
+                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/money vip <player>"));
                     return true;
                 }
                 OfflinePlayer targetVip = Bukkit.getOfflinePlayer(args[1]);
@@ -72,7 +72,7 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
 
             case "adicionar":
                 if (args.length != 3) {
-                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/arcanemoney adicionar <player> <amount>"));
+                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/money adicionar <player> <amount>"));
                     return true;
                 }
                 OfflinePlayer targetAdd = Bukkit.getOfflinePlayer(args[1]);
@@ -104,7 +104,7 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
 
             case "remover":
                 if (args.length != 3) {
-                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/arcanemoney remover <player> <amount>"));
+                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/money remover <player> <amount>"));
                     return true;
                 }
                 OfflinePlayer targetRemove = Bukkit.getOfflinePlayer(args[1]);
@@ -140,7 +140,7 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
 
             case "saldo":
                 if (args.length != 2) {
-                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/arcanemoney saldo <player>"));
+                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/money saldo <player>"));
                     return true;
                 }
                 OfflinePlayer targetBalance = Bukkit.getOfflinePlayer(args[1]);
@@ -157,7 +157,7 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
 
             case "transferir":
                 if (args.length != 4) {
-                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/arcanemoney transferir <from> <to> <amount>"));
+                    sender.sendMessage(configManager.getMessage("invalid-arguments").replace("%usage%", "/money transferir <from> <to> <amount>"));
                     return true;
                 }
                 OfflinePlayer from = Bukkit.getOfflinePlayer(args[1]);

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'net.thiago'
-version = '2.5 beta'
+version = '2.7 beta'
 
 repositories {
     mavenCentral()

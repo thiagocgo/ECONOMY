@@ -30,7 +30,7 @@ public class ArcaneMoney extends JavaPlugin {
         // Set default configuration values
         saveDefaultConfig();
         getConfig().addDefault("shops.stock-limit", 640);
-        getConfig().addDefault("investment.yield-rate", 0.05); // Adicionado para testes
+        getConfig().addDefault("investment.yield-rate", 0.005);
         getConfig().addDefault("investment.yield-limit", 1000.0);
         getConfig().options().copyDefaults(true);
         saveConfig();
@@ -48,8 +48,8 @@ public class ArcaneMoney extends JavaPlugin {
         PriceGUI.setPlugin(this);
 
         // Register commands and tab completers
-        getCommand("arcanemoney").setExecutor(new ArcaneMoneyCommand(this));
-        getCommand("arcanemoney").setTabCompleter(new ArcaneMoneyCommand(this));
+        getCommand("money").setExecutor(new ArcaneMoneyCommand(this));
+        getCommand("money").setTabCompleter(new ArcaneMoneyCommand(this));
         getCommand("saldo").setExecutor(new BalanceCommand(this));
         getCommand("saldo").setTabCompleter(new BalanceCommand(this));
         getCommand("transferir").setExecutor(new TransferCommand(this));
@@ -65,7 +65,6 @@ public class ArcaneMoney extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new ShopBlockListener(this), this);
         getServer().getPluginManager().registerEvents(new ShopInventoryListener(this), this);
-
 
         bossBarManager.initializeBossBars();
         getLogger().info("ArcaneMoney enabled!");
