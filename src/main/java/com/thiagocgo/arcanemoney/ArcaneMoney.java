@@ -27,16 +27,17 @@ public class ArcaneMoney extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Initialize default config with shops.stock-limit
+        // Set default configuration values
         saveDefaultConfig();
-        getConfig().addDefault("shops.stock-limit", 640); // Default stock limit
+        getConfig().addDefault("shops.stock-limit", 640);
+        getConfig().addDefault("investment.yield-rate", 0.05); // Adicionado para testes
+        getConfig().addDefault("investment.yield-limit", 1000.0);
         getConfig().options().copyDefaults(true);
         saveConfig();
 
         configManager = new ConfigManager(this);
         configManager.setupMessages();
         configManager.setupEconomy();
-        configManager.setupVipsStaff();
         configManager.setupBossBar();
         configManager.setupTrades();
         configManager.setupShops();
@@ -44,7 +45,7 @@ public class ArcaneMoney extends JavaPlugin {
         investmentManager = new InvestmentManager(this);
         bossBarManager = new BossBarManager(this);
         shopManager = new ShopManager(this);
-        PriceGUI.setPlugin(this); // Initialize static plugin in PriceGUI
+        PriceGUI.setPlugin(this);
 
         // Register commands and tab completers
         getCommand("arcanemoney").setExecutor(new ArcaneMoneyCommand(this));
@@ -65,7 +66,7 @@ public class ArcaneMoney extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ShopBlockListener(this), this);
         getServer().getPluginManager().registerEvents(new ShopInventoryListener(this), this);
 
-        investmentManager.startYieldTask();
+
         bossBarManager.initializeBossBars();
         getLogger().info("ArcaneMoney enabled!");
     }
@@ -74,7 +75,6 @@ public class ArcaneMoney extends JavaPlugin {
     public void onDisable() {
         configManager.saveConfig();
         configManager.saveEconomy();
-        configManager.saveVipsStaff();
         configManager.saveBossBar();
         configManager.saveTrades();
         configManager.saveShops();

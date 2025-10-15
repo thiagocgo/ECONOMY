@@ -17,13 +17,11 @@ public class ConfigManager {
     private FileConfiguration config;
     private FileConfiguration messages;
     private FileConfiguration economy;
-    private FileConfiguration vipsStaff; // Mantido mas SEMPRE VAZIO (só investment config)
     private FileConfiguration bossBar;
     private FileConfiguration trades;
     private FileConfiguration shops;
     private File messagesFile;
     private File economyFile;
-    private File vipsStaffFile;
     private File bossBarFile;
     private File tradesFile;
     private File shopsFile;
@@ -53,16 +51,6 @@ public class ConfigManager {
         }
         economy = YamlConfiguration.loadConfiguration(economyFile);
         plugin.getLogger().info("Loaded economy.yml");
-    }
-
-    public void setupVipsStaff() {
-        vipsStaffFile = new File(plugin.getDataFolder(), "vips_staff.yml");
-        if (!vipsStaffFile.exists()) {
-            plugin.saveResource("vips_staff.yml", false);
-        }
-        vipsStaff = YamlConfiguration.loadConfiguration(vipsStaffFile);
-        // ✅ JSON REMOVIDO! VIP/Staff agora via PERMISSÕES
-        plugin.getLogger().info("Loaded vips_staff.yml (permissions system active)");
     }
 
     public void setupBossBar() {
@@ -96,8 +84,6 @@ public class ConfigManager {
         plugin.getLogger().info("Loaded shops.yml");
     }
 
-    // ✅ MÉTODOS JSON REMOVIDOS TOTALMENTE!
-
     public FileConfiguration getConfig() {
         return config;
     }
@@ -108,10 +94,6 @@ public class ConfigManager {
 
     public FileConfiguration getEconomy() {
         return economy;
-    }
-
-    public FileConfiguration getVipsStaff() {
-        return vipsStaff;
     }
 
     public FileConfiguration getBossBar() {
@@ -150,15 +132,6 @@ public class ConfigManager {
             plugin.getLogger().info("Saved economy.yml");
         } catch (IOException e) {
             plugin.getLogger().warning("Failed to save economy.yml: " + e.getMessage());
-        }
-    }
-
-    public void saveVipsStaff() {
-        try {
-            vipsStaff.save(vipsStaffFile);
-            plugin.getLogger().info("Saved vips_staff.yml");
-        } catch (IOException e) {
-            plugin.getLogger().warning("Failed to save vips_staff.yml: " + e.getMessage());
         }
     }
 
@@ -212,14 +185,12 @@ public class ConfigManager {
         this.config = plugin.getConfig();
         messages = YamlConfiguration.loadConfiguration(messagesFile);
         economy = YamlConfiguration.loadConfiguration(economyFile);
-        vipsStaff = YamlConfiguration.loadConfiguration(vipsStaffFile);
         trades = YamlConfiguration.loadConfiguration(tradesFile);
         shops = YamlConfiguration.loadConfiguration(shopsFile);
         if (!trades.contains("trades") || trades.getConfigurationSection("trades").getKeys(false).isEmpty()) {
             plugin.saveResource("trades.yml", true);
             trades = YamlConfiguration.loadConfiguration(tradesFile);
         }
-        // ✅ JSON REMOVIDO DO RELOAD!
         plugin.getLogger().info("Reloaded all configuration files");
     }
 
@@ -244,7 +215,6 @@ public class ConfigManager {
         return message.replace("&", "§");
     }
 
-    // ✅ MÉTODO getSafeMapList MANTIDO (só investment config usa)
     public List<Map<String, Object>> getSafeMapList(FileConfiguration config, String path) {
         List<?> rawList = config.getList(path, new ArrayList<>());
         List<Map<String, Object>> result = new ArrayList<>();

@@ -6,8 +6,12 @@ currency:
 starting-balance: 100
 
 trade:
-  vip-discount: 0.1 # 10% de desconto na compra para VIPs/Investors
-  vip-bonus: 0.1 # 10% de bônus na venda para VIPs/Investors
+  vip-discount: 0.1  # 10% de desconto na compra para VIPs/Investors
+  vip-bonus: 0.1    # 10% de bônus na venda para VIPs/Investors
 
 shops:
-  stock-limit: 640 # Limite de estoque por item na loja (em itens). Use -1 para ilimitado.
+  stock-limit: 640  # Limite de estoque por item na loja (em itens). Use -1 para ilimitado.
+
+investment:
+  yield-rate: 0.05   # 5% para testes (produção: 0.005)
+  yield-limit: 1000.0  # Limite máximo de yield por dia

@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -56,21 +55,15 @@ public class ArcaneMoneyCommand implements CommandExecutor, TabCompleter {
                     sender.sendMessage(configManager.getMessage("invalid-player"));
                     return true;
                 }
-                FileConfiguration vipsStaff = configManager.getVipsStaff();
-                List<Map<String, Object>> vips = configManager.getSafeMapList(vipsStaff, "vips");
+                // Adiciona permissão via LuckPerms
                 String uuid = targetVip.getUniqueId().toString();
-                for (Map<String, Object> vip : vips) {
-                    if (uuid.equals(vip.get("uuid"))) {
-                        sender.sendMessage(configManager.getMessage("player-already-vip").replace("%player%", targetVip.getName()));
-                        return true;
-                    }
+                if (targetVip.isOnline() && targetVip.getPlayer().hasPermission("arcanemoney.vip")) {
+                    sender.sendMessage(configManager.getMessage("player-already-vip").replace("%player%", targetVip.getName()));
+                    return true;
                 }
-                Map<String, Object> newVip = new HashMap<>();
-                newVip.put("uuid", uuid);
-                newVip.put("last_yield", 0L);
-                vips.add(newVip);
-                vipsStaff.set("vips", vips);
-                configManager.saveVipsStaff();
+                // Executa comando do LuckPerms para adicionar permissão
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+                        "lp user " + targetVip.getName() + " permission set arcanemoney.vip true");
                 sender.sendMessage(configManager.getMessage("vip-added").replace("%player%", targetVip.getName()));
                 if (targetVip.isOnline()) {
                     targetVip.getPlayer().sendMessage(configManager.getMessage("vip-granted"));
