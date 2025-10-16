@@ -1,5 +1,0 @@
-// PROBLEMAS //
-
-
-a shulker fecha mesmo com a gui aberta
-fazer particulas sairem sempre -> Configurability: Consider adding configuration options for particle type, frequency

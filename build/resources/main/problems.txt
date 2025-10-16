@@ -1,5 +1,0 @@
-// PROBLEMAS //
-
-
-a shulker fecha mesmo com a gui aberta
-fazer particulas sairem sempre

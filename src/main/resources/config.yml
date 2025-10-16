@@ -13,5 +13,22 @@ shops:
   stock-limit: 640  # Limite de estoque por item na loja (em itens). Use -1 para ilimitado.
 
 investment:
-  yield-rate: 0.05   # 5% para testes (produção: 0.005)
-  yield-limit: 1000.0  # Limite máximo de yield por dia
+  yield-rate: 0.05  # 0.5% para produção
+  yield-limit: 1000.0
+
+# Configuração de partículas e sons para lojas
+shop-effects:
+  particles:
+    enabled: true
+    type1: PORTAL
+    type2: END_ROD
+    frequency: 40  # 10 segundos
+    amount: 10      # 10 partículas por burst
+    offset: 0.5     # Raio de 0.5 blocos (máximo: 5.0)
+    speed: 0.05     # Velocidade das partículas
+  sounds:
+    enabled: true
+    type: BLOCK_BEACON_AMBIENT
+    frequency: 100
+    volume: 0.5
+    pitch: 1.0

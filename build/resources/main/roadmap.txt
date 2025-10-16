@@ -1,22 +1,22 @@
+// PROBLEMAS //
+
+
+a shulker fecha mesmo com a gui aberta
+falta de suporte a itens custom
+
+ao quebrar uma loja dropa  aloja e uma shulkerbox extra e ai tao perdendo a função, ao quebrar vamos eliminar ela do mundo sem virar item fisico (como quebrar no criativo) e dar uima no inventario
+do jogador como se fosse um comando.
+
+// IDEIAS //
+
+1. CRIAR CONDIÇÕES PARA PODER FAZER LOJA ( VIP -> LIMITE DE 3 LOJAS, PRIMEIRA LOJA 5000, SEGUNDA 15000 TERCEIRA 45000)
+
+
+2. criar mensagem de que alguém tentou comprar na sua loja, mas o estoque acabou.
 
 
 
-CRIAR CONDIÇÕES PARA PODER FAZER LOJA
-
-VIP -> LIMITE DE 3 LOJAS, PRIMEIRA LOJA 5000, SEGUNDA 15000 TERCEIRA 45000
-
-
-2. UMA DUVIDA, TEMOS SUPORTE SOMENTE A ITENS NATIVOS DO MINE OU PODEMOS COLOCAR QUALQUER ITEM DE MOD/PLUGIN AI DENTRO? E EM RELAÇÃO A NBT DE ITENS ENCANTADOS POR EX??
-
-Configurability: Consider adding configuration options for particle type, frequency
-
-
-
-2. criar mensagem de que alguem tentou comprar na sua loja mas o estoque acabou.
-// LOGICA //
-
-
-
+// LOGIC //
 
 ADMINSHOP: Abrir -> Gerenciar Loja -> Clicar no item -> Abrir menu de quantidade -> Abrir menu de preço -> criar anuncio de estoque infinito
 
